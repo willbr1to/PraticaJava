@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        // Parte 1 leitura dos dados.
         Scanner sc = new Scanner(System.in);
         int N, M = 0;
 
@@ -17,6 +18,37 @@ public class Main {
                 matriz[i][j] = sc.nextInt();
             }
         }
-        System.out.println(Arrays.deepToString(matriz));
+        // Parte 2 manipulacao da matriz e impressao do resultado.
+        System.out.println("Digite o elemento que deseja buscar na matriz: ");
+        int x = sc.nextInt();
+        int cont = 1;
+        for(int i = 0; i < M; i++){
+            for(int j = 0; j < N; j++){
+                if(matriz[i][j] == x){
+                    System.out.printf("Ocorrencia %d do elemento '%d': Pocisao [%d][%d].", cont, x, i, j);
+                    System.out.println();
+                    try {
+                        System.out.println("Elemento a esquerda: "+ matriz[i][j - 1]);
+
+                    } catch (ArrayIndexOutOfBoundsException e) {
+                    }
+                    try {
+                        System.out.println("Elemento a direita: "+ matriz[i][j + 1]);
+
+                    } catch (ArrayIndexOutOfBoundsException e) {
+                    }
+                    try {
+                        System.out.println("Elemento a acima: "+ matriz[i - 1][j]);
+
+                    } catch (ArrayIndexOutOfBoundsException e) {
+                    }
+                    try {
+                        System.out.println("Elemento a abaixo: "+ matriz[i+1][j]);
+                    } catch (ArrayIndexOutOfBoundsException e) {
+                    }
+                    cont++;
+                }
+            }
+        }
     }
 }
