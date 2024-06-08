@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // Parte 1 leitura dos dados.
+        // Parte 1 ler dos dados.
         Scanner sc = new Scanner(System.in);
         int N, M = 0;
 
@@ -18,7 +18,7 @@ public class Main {
                 matriz[i][j] = sc.nextInt();
             }
         }
-        // Parte 2 manipulacao da matriz e impressao do resultado.
+        // Parte 2 manipular a matriz e imprimir o resultado.
         System.out.println("Digite o elemento que deseja buscar na matriz: ");
         int x = sc.nextInt();
         int cont = 1;
